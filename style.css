@@ -136,15 +136,16 @@ body {
 }
 .box-6:before {
   content: "";
-  background-color: yellow;
+  /* background-color: yellow; */
   width: 0px;
   height: 0px;
-  border-bottom: 20px solid yellow;
-  border-top: 20px solid white;
-  border-right: 20px solid white;
-  border-left: 20px solid white;
+  border-bottom: 20px solid white;
+  border-top: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: -20px;
 }
