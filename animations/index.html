@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animations</title>
+    <style>
+      /**Transforms**/
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        /* background-color: black; */
+      }
+      .transform {
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        background-color: red;
+        color: white;
+        transform-origin: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* margin: auto; */
+        /* transform: scale(1.5); */
+        /* transform: translate3d(-50px, 1rem, 100px); */
+        /* transform: rotateX(45deg); */
+      }
+
+      /***Transitions***/
+      /**Transitions allow us to control how the element will transition from one state to another.**/
+      /* .transition {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: purple;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transition: left 5s ease-in 1s;
+      }
+      .transition:hover {
+        left: 100%;
+      } */
+
+      /**Animations and keyframes**/
+      body {
+        display: grid; /****how to make same layout using flex****/
+      }
+
+      .sky {
+        background-color: lightblue;
+      }
+      .grass {
+        background-color: green;
+      }
+      .road {
+        background-color: gray;
+      }
+      .cloud {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .cloud {
+        background-color: white;
+      }
+      .cloud:nth-child(1) {
+        opacity: 0.5;
+        top: 0px;
+        left: 0px;
+        /* animation: cloud 5s inherit 0s infinite; */
+        animation-name: move;
+        animation-duration: 40s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .cloud:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        top: 50px;
+        left: 50px;
+        animation: move 30s linear 0s infinite;
+      }
+      .vehicle {
+        width: 150px;
+        height: 100px;
+        background-color: red;
+        bottom: -50px;
+        animation: move 5s linear 0s infinite;
+        position: relative;
+      }
+      .vehicle::before,
+      .vehicle::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        position: absolute;
+        border-radius: 100%;
+      }
+      .vehicle::before {
+        top: 100%;
+        left: 15px;
+      }
+      .vehicle::after {
+        top: 100%;
+        right: 15px;
+      }
+
+      /**Keyframes**/
+      @keyframes move {
+        from {
+          transform: translateX(-50px);
+        }
+        to {
+          transform: translateX(1000px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="transform">
+      <p>Hello</p>
+    </div> -->
+    <!-- <div class="transition"></div> -->
+    <div class="sky">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+    <div class="grass"></div>
+    <div class="road">
+      <div class="vehicle"></div>
+    </div>
+  </body>
+</html>
